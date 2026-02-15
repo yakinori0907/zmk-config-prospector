@@ -4,14 +4,17 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: prospector
       url-base: https://github.com/t-ogura
+    - name: my-repo  # ★追加: あなたのリモート定義
+      url-base: https://github.com/yakinori0907
+
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
     - name: prospector-zmk-module
-      remote: prospector
-      revision: v2.1.0
+      remote: my-repo  # ★変更: prospector -> my-repo
+      revision: main   # ★変更: v2.1.0 -> main
       path: modules/prospector-zmk-module
   self:
     path: config
